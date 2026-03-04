@@ -145,7 +145,7 @@ const UserDetailes = ({ order }: { order: Orders }) => {
           {orderData?.orderItems && orderData.orderItems?.length > 0 ? (
             <div className="px-5  bg-white rounded-lg overflow-hidden">
               <div className="rounded-lg  w-full py-7 gap-y-5 grid grid-cols-2 md:grid-cols-3 gap-x-1  lg:grid-cols-4 px-3 overflow-hidden bg-white">
-                {orderData?.orderItems.map((itm) => (
+                {orderData?.orderItems?.map((itm) => (
                   <Link href={`/products/${itm.product.id}`} key={itm.id}>
                     <div className="w-full shadow-sm rounded-lg">
                       <div className="  flex flex-col items-center w-auto h-auto rounded-t-md overflow-hidden  ">

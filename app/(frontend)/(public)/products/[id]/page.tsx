@@ -18,7 +18,7 @@ const ProductsDetails = async ({ params }: { params: { id: string } }) => {
             <ImageSwiper images={products.image} />
           </div>
           <div className="flex justify-center items-center gap-2 opacity-50 max-w-[99%] overflow-x-scroll  ">
-            {products.image.map((img, i) => (
+            {products.image?.map((img, i) => (
               <Image
                 src={img.url}
                 alt={img.id}

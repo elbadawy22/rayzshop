@@ -20,7 +20,7 @@ export default function page() {
             </h1>
           </div>
           <div className="rounded-lg  w-full py-7 gap-y-5 grid grid-cols-2 md:grid-cols-3 gap-x-1  lg:grid-cols-4 px-3 overflow-hidden bg-white">
-            {user?.categories.map((category: Categories) => (
+            {user?.categories?.map((category: Categories) => (
               <Link href={`/admin/categories/${category.id}`} key={category.id}>
                 <div className="w-full shadow-sm rounded-lg">
                   <div className="  flex flex-col items-center w-auto h-auto rounded-t-md overflow-hidden  ">

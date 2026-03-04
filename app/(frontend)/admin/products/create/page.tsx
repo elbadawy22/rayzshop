@@ -132,7 +132,7 @@ const CreateProduct = () => {
                     required
                   >
                     <option  className=" disabled ">Choose Category...</option>
-                    {category.map((catg:Categories)=>
+                    {category?.map((catg:Categories)=>
                     
                     <option key={catg.id} value={catg.id} className="text-black">
                       {catg.name}

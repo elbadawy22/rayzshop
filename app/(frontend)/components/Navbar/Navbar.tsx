@@ -154,7 +154,7 @@ export const Navbar = ({ category }: { category: Categories[] }) => {
                   All Products
                 </Link>
               </li>
-              {category.map((Item, index) => {
+              {category?.map((Item, index) => {
                 return (
                   <li
                     key={index}
@@ -353,7 +353,7 @@ export const Navbar = ({ category }: { category: Categories[] }) => {
               All Products
             </Link>
           </li>
-          {category.map((Item, index) => {
+          {category?.map((Item, index) => {
             return (
               <li
                 key={index}

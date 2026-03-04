@@ -49,7 +49,7 @@ const Cart = () => {
             {/* products cart */}
 
             {items.length > 0 ? (
-              items.map((item, i) => (
+              items?.map((item, i) => (
                 <div
                   className="border-b border-b-gray-300 py-2 flex justify-between"
                   key={i}

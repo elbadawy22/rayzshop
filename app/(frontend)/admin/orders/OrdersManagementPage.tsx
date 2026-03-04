@@ -151,7 +151,7 @@ export default function UsersManagementPage() {
               </tr>
             </thead>
             <tbody>
-              {filteredUsers.map((order) => (
+              {filteredUsers?.map((order) => (
                 <tr
                   key={order.id}
                   className="buser-b border-gray-100 hover:bg-gray-50"
@@ -218,7 +218,7 @@ export default function UsersManagementPage() {
             >
               Previous...
             </button>
-            {Array.from({ length: Math.ceil(count / pageNumData) }).map(
+            {Array.from({ length: Math.ceil(count / pageNumData) })?.map(
               (_, i) => (
                 <div key={i}>
                   {i + 1 <= pageNum + 1 && i + 1 >= pageNum - 1 ? (

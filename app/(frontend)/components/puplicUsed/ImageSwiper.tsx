@@ -17,7 +17,7 @@ export default function ImageSwiper({
   return (
     <>
       <Swiper className="mySwiper  ">
-        {images.map((img) => (
+        {images?.map((img) => (
           <SwiperSlide>
             <Image
               className="   h-auto   transition-all duration-200 overflow-hidden cursor-pointer "

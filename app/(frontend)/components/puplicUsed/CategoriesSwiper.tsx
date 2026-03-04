@@ -29,7 +29,7 @@ export default function CategoriesSwiper() {
         className="mySwiper"
       >
         {category && category.length > 0 ? (
-          category.map((res: Categories) => (
+          category?.map((res: Categories) => (
             <SwiperSlide key={res.id} className="py-5">
               <Link
                 href={`/products?categoryId=${res.id}`}

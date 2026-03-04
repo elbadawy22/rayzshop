@@ -51,7 +51,7 @@ const OrderChartColor = ({ order }: { order: ChartsOrders | undefined }) => {
                 }% `
               }
             >
-              {data.map((entry, i) => (
+              {data?.map((entry, i) => (
                 <Cell key={`cell-${i}`} fill={COLORS[i % COLORS.length]} />
               ))}
             </Pie>

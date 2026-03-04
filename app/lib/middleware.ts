@@ -8,7 +8,7 @@ export function getCookie(request: NextRequest , name: string): string | undefin
   }
   const cookieHeader = request.headers?.get('cookies') || ''
   const cookies = Object.fromEntries(
-    cookieHeader.split('; ').map(cookie => {
+    cookieHeader.split('; ')?.map(cookie => {
       const [key, ...val] = cookie.split('=')
       return [key, val.join('=')]
     })

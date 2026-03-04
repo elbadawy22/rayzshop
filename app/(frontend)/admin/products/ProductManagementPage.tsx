@@ -80,7 +80,7 @@ export default function ProductManagementPage() {
       {/* Orders Table */}
       <div className="bg-white rounded-lg shadow-md overflow-hidden ">
         <div className="rounded-lg  w-full py-7 gap-y-5 grid grid-cols-2 md:grid-cols-3 gap-x-1  lg:grid-cols-4 px-3 overflow-hidden bg-white">
-          {filteredCategory.map((product) => (
+          {filteredCategory?.map((product) => (
             <ProductItem product={product} key={product.id} />
           ))}
         </div>
@@ -99,7 +99,7 @@ export default function ProductManagementPage() {
             >
               Previous...
             </button>
-            {Array.from({ length: Math.ceil(count / pageNumData) }).map(
+            {Array.from({ length: Math.ceil(count / pageNumData) })?.map(
               (_, i) => (
                 <div key={i}>
                   {i + 1 <= pageNum + 1 && i + 1 >= pageNum - 1 ? (

@@ -14,7 +14,7 @@ export default function page() {
         <div className="bg-white rounded-lg shadow-md overflow-hidden ">
           <div className="w-full " ><h1 className="font-bold text-gray-800 text-center pt-10" >My Products</h1></div>
           <div className="rounded-lg  w-full py-7 gap-y-5 grid grid-cols-2 md:grid-cols-3 gap-x-1  lg:grid-cols-4 px-3 overflow-hidden bg-white">
-            {user?.products.map((product: Products) => (
+            {user?.products?.map((product: Products) => (
               <ProductItem product={product} key={product.id} />
             ))}
           </div>

@@ -154,7 +154,7 @@ export async function POST(req: NextRequest) {
                 deliveryAddress: body.deliveryAddress,
                 userId: user.id,
                 orderItems: {
-                  create: body.orderItems.map((product) => ({
+                  create: body.orderItems?.map((product) => ({
                     productId: product.id as string,
                     quantity: product.quantity,
                   })),
@@ -275,7 +275,7 @@ export async function POST(req: NextRequest) {
                   data: {
                     deliveryAddress: body.deliveryAddress,
                     orderItems: {
-                      create: body.orderItems.map((product) => ({
+                      create: body.orderItems?.map((product) => ({
                         productId: product.id as string,
                         quantity: product.quantity,
                       })),

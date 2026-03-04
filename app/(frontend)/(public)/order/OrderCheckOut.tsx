@@ -27,7 +27,7 @@ export default function OrderCheckOut() {
       id: string;
       quantity: number;
     }[];
-    items.map((itm) => orderItems.push({ id: itm.id, quantity: itm.quantity }));
+    items?.map((itm) => orderItems.push({ id: itm.id, quantity: itm.quantity }));
 
     if (
       deliveryAddress &&
@@ -82,7 +82,7 @@ export default function OrderCheckOut() {
             {/* products cart */}
 
             {items.length > 0 ? (
-              items.map((item, i) => (
+              items?.map((item, i) => (
                 <div
                   className="border-b shadow border-b-gray-300  py-3 px-2 flex justify-between "
                   key={i}

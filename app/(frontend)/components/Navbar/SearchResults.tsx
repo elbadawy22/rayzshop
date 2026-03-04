@@ -65,7 +65,7 @@ const SearchResults = () => {
             </div>
           </div>
           <ul className="px-2 pb-2 text-sm text-body max-h-50 font-medium overflow-y-scroll">
-            {data.map((item, i) => (
+            {data?.map((item, i) => (
               <li key={i} className="border-b border-gray-100">
                 <Link
                   href={`/products?search=${item.name}`}

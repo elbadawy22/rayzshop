@@ -34,7 +34,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       const exists = prev.find((i) => i.id === item.id);
 
       if (exists) {
-        return prev.map((i) =>
+        return prev?.map((i) =>
           i.id === item.id ? { ...i, quantity: i.quantity + 1 } : i,
         );
       }
@@ -46,7 +46,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       const exists = prev.find((i) => i.id === item.id);
 
       if (exists && exists.quantity > 1) {
-        return prev.map((i) =>
+        return prev?.map((i) =>
           i.id === item.id ? { ...i, quantity: i.quantity - 1 } : i,
         );
       }
