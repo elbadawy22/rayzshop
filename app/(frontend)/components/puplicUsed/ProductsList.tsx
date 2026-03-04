@@ -19,7 +19,7 @@ const ProductsList = ({
   return (
     <div className="w-full grow">
       <div className="  w-full  grid grid-cols-2 md:grid-cols-3 gap-x-1 gap-y-3 lg:grid-cols-4 px-3 overflow-hidden bg-white ">
-        {products?.data.length > 0
+        {products && products?.data.length > 0
           ? products?.data?.map((res: AllProducts) => (
               <div
                 key={res.id}
