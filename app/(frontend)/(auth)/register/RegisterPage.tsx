@@ -78,7 +78,7 @@ const RegisterPage = () => {
 
   return (
     <section>
-      <div className=" absolute bg-white min-w-screen min-h-screen flex items-start lg:items-center lg:pt-0 pt-10   px-4 ">
+      <div className=" absolute top-0 z-800000 justify-center h-screen bg-white w-full flex  items-center    px-4 ">
         <div className="w-full  flex flex-col lg:flex-row lg:px-15 lg:gap-20  justify-around  items-center">
           <div className="text-center mb-3 ">
             <div className="inline-flex  items-center justify-center w-14 h-14 bg-[#2563EB] rounded-2xl mb-4">
