@@ -42,7 +42,7 @@ export default function SwiperHeroHome({
         onAutoplayTimeLeft={onAutoplayTimeLeft}
         className=""
       >
-        {categories.map((category, i) => (
+        {categories?.map((category, i) => (
           <SwiperSlide
             key={category.id}
             className=" flex flex-col pt-20  mb-15  gap-10   "
