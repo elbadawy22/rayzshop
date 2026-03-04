@@ -42,7 +42,7 @@ export default async function RootLayout({
             <Navbar category={category} />
             <main>
               <ToastContainer
-                position="top-center"
+                position="bottom-left"
                 autoClose={500}
                 hideProgressBar={false}
                 newestOnTop={true}
@@ -50,6 +50,7 @@ export default async function RootLayout({
                 pauseOnHover={true}
                 draggable={true}
                 theme="light"
+                className={`z-900000000`}
               />
               {children}
             </main>
