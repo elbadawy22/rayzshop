@@ -36,7 +36,6 @@ const HomePage = async () => {
           <div className="z-0 md:px-20 ">
             <ProductsList products={products} />
           </div>
-          ;
         </div>
       </div>
       <div className="w-full  bg-white shadow-2xl "></div>
