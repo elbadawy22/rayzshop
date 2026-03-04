@@ -1,0 +1,110 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client"
+  output   = "../app/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id              String     @id @default(uuid())
+  name            String
+  email           String     @unique
+  phone           String
+  deliveryAddress String?
+  password        String
+  role            Role       @default(CUSTTOMER)
+  createdAt       DateTime   @default(now())
+  products        Product[]
+  orders          Order[]
+  categories      Category[]
+}
+
+model Category {
+  id          String   @id @default(nanoid())
+  name        String   @unique
+  description String?
+  stock       Int
+  images      Images[]
+  createdById String
+  createdAt   DateTime  @default(now())
+  createdBy   User      @relation(fields: [createdById], references: [id])
+  product     Product[]
+}
+
+model Product {
+  id          String      @id @default(uuid())
+  name        String
+  categoryId  String
+  description String?
+  price       Float
+  stock       Int
+  image       Images[]
+  createdById String
+  createdAt   DateTime    @default(now())
+  createdBy   User        @relation(fields: [createdById], references: [id])
+  category    Category    @relation(fields: [categoryId], references: [id])
+  orderItems  OrderItem[]
+}
+
+model Order {
+  id              String          @id @default(uuid()) 
+  userId          String?
+  status          OrderStatus     @default(PENDING)
+  totalPrice      Float?
+  deliveryAddress String
+  createdAt       DateTime        @default(now())
+  user            User?           @relation(fields: [userId], references: [id])
+  orderItems      OrderItem[]
+  guestInfo       String?
+  guestOrderInfo  GuestOrderInfo?
+}
+
+model OrderItem {
+  id        String  @id @default(uuid())
+  orderId   String
+  productId String
+  quantity  Int
+  order     Order   @relation(fields: [orderId], references: [id])
+  product   Product @relation(fields: [productId], references: [id])
+}
+
+model GuestOrderInfo {
+  id              String @id @default(uuid())
+  orederid        String @unique
+  name            String
+  phone           String
+  deliveryAddress String
+  order           Order  @relation(fields: [orederid], references: [id])
+}
+
+model Images {
+  id             String    @id @default(uuid())
+  categoryId String?
+  productId   String?
+  public_id      String
+  url            String
+  category   Category? @relation(fields: [categoryId], references: [id])
+  product    Product?  @relation(fields: [productId], references: [id])
+}
+
+enum Role {
+  CUSTTOMER
+  PRODUCTS_MANAGER
+  ORDER_MANAGER
+  ADMIN
+}
+
+enum OrderStatus {
+  PENDING
+  CONFIRMED
+  DELIVERED
+  CANCELED
+}
