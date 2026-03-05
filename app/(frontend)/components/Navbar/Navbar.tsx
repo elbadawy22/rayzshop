@@ -37,7 +37,7 @@ export const Navbar = ({ category }: { category: Categories[] }) => {
             <Menu className="text-gray-700" />
           )}
         </div>
-        <div className="md:hidden">
+        <div className="md:hidden  ">
           <SearchResults />
         </div>
         <h3 className=" text-sm  md:px-5  pr-2 font-extrabold bg-linear-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
@@ -221,7 +221,7 @@ export const Navbar = ({ category }: { category: Categories[] }) => {
         </div>
         {/* Desktop */}
 
-        <div className="hidden md:grow px-10 md:flex md:items-center md:justify-around  ">
+        <div className="hidden md:grow  md:flex md:items-center md:justify-around  ">
           <SearchResults />
           <div className="w-full flex items-center justify-end gap-3">
             {/*  */}

@@ -19,7 +19,7 @@ const CreateProduct = () => {
       if (creater.ok) {
         const success = await creater.json();
         toast.success(success.message);
-        router.push("/admin/categories");
+        router.push("/admin/products");
       }
       if (!creater.ok) {
         const fail = await creater.json();
@@ -38,7 +38,7 @@ const CreateProduct = () => {
           </h2>
           <form
             action={handelAction}
-            //  onSubmit={()=> setLoading(true)}
+             onSubmit={()=> setLoading(true)}
             className="w-full"
           >
             <div className=" grid grid-cols-1 gap-x-6 gap-y-5 sm:grid-cols-6">

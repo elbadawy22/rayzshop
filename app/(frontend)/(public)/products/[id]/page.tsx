@@ -33,8 +33,8 @@ const ProductsDetails = async ({ params }: { params: { id: string } }) => {
         <div className="  w-full md:max-w-[50%] ">
           <div>
             {" "}
-            <h2>{products.name}</h2>{" "}
-            <span className="text-sm text-blue-500 rounded-lg bg-blue-100 px-1 ">
+            <h2 className="font-bold" >{products.name}</h2>{" "}
+            <span className="  text-sm text-blue-500 rounded-lg bg-blue-100 px-1 ">
               {products?.category?.name}
             </span>
           </div>
@@ -56,7 +56,7 @@ const ProductsDetails = async ({ params }: { params: { id: string } }) => {
           <h3 className="border-b-2 border-gray-300 p-2 px-3 font-bold">
             Specifications:
           </h3>
-          <pre className="p-2 px-5 text-sm overflow-x-scroll ">
+          <pre className="p-2 px-5 text-sm overflow-x-scroll wrap-normal ">
             {products.description}
           </pre>
         </div>

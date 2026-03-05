@@ -26,8 +26,8 @@ export async function GET(req: NextRequest) {
       where,
     });
     const category = await prisma.category.findMany({
-      skip: pageNumber * CATEGORY_PER_PAGE - CATEGORY_PER_PAGE,
-      take: CATEGORY_PER_PAGE,
+      // skip: pageNumber * CATEGORY_PER_PAGE - CATEGORY_PER_PAGE,
+      // take: CATEGORY_PER_PAGE,
       where,
       include: {
         images: {
@@ -39,6 +39,9 @@ export async function GET(req: NextRequest) {
         createdBy: true,
         product:true
       },
+      orderBy:{
+      name:"asc"
+      }
     });
     return NextResponse.json(
       {

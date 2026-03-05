@@ -3,7 +3,6 @@
 import { Orders } from "@/app/(frontend)/lib/taypes";
 import { useAuth } from "@/app/(frontend)/providers/AuthProvider";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function page() {
   const { user } = useAuth();
@@ -23,8 +22,7 @@ export default function page() {
                   key={order.id}
                   className="flex flex-col sm:flex-row  gap-2 shadow px-3 py-2 rounded-md "
                 >
-                  <Link
-                    href={`/me/orders/${order.id}`}
+                  <div
                     className="border hover:scale-90 transition-all duration-300 border-gray-200 shadow rounded-md p-1  grid grid-cols-2"
                   >
                     {order.orderItems?.map((itm) => (
@@ -37,7 +35,7 @@ export default function page() {
                         className="w-full"
                       />
                     ))}
-                  </Link>
+                  </div>
                   <div className="flex flex-col gap-3  wrap-anywhere ">
                     <div className="px-2">
                       <p className=" ">{order.deliveryAddress}</p>

@@ -9,7 +9,7 @@ const SearchResults = () => {
   const [open, setOpen] = useState<boolean>(true);
   const [data, setdata] = useState<Products[]>([]);
   const [searchInput, setSearchInput] = useState<string>("");
-  const router = useRouter()
+  const router = useRouter();
   const handelChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     setOpen(true);
     setSearchInput(e.target.value);
@@ -22,16 +22,19 @@ const SearchResults = () => {
     }
   };
   const handelEnter = async (e: FormData) => {
-    const name = e.get("search") as string
+    const name = e.get("search") as string;
     setOpen(true);
-    if ( name != "") {
-        router.push(`products?search=${name}`)
+    if (name != "") {
+      router.push(`products?search=${name}`);
       setOpen(true);
     }
   };
   return (
     <>
-      <form action={handelEnter} className="md:hidden grow w-full px-1 pr-3 sm:px-4">
+      <form
+        action={handelEnter}
+        className="md:hidden grow w-full px-1 pr-3 sm:px-4"
+      >
         <input
           type="search"
           placeholder="Search..."
@@ -41,7 +44,10 @@ const SearchResults = () => {
           name="search"
         />
       </form>
-      <form action={handelEnter} className="hidden md:block grow w-full px-1 pr-3 sm:px-4">
+      <form
+        action={handelEnter}
+        className="hidden md:block grow w-full px-1 pr-3 sm:px-4"
+      >
         <input
           type="search"
           placeholder="Search..."
@@ -52,10 +58,10 @@ const SearchResults = () => {
         />
       </form>
       {/* <!-- Dropdown menu --> */}
-      <div className=" fixed z-1 w-full md:left-20 sm:left-30 left-[10%] max-w-[70%] top-12">
+      <div className=" fixed z-1  right-0 px-5 pb-3 w-full overflow-hidden  top-11 md:top-9">
         <div
           hidden={open}
-          className=" z-1 top-12 w-full max-w-200 bg-white  rounded-base shadow-lg "
+          className=" z-1 top-12 w-full max-w-200 rounded bg-white   rounded-base shadow-lg "
         >
           <div className="p-2  ">
             <div className="border-b-2 border-slate-200 flex items-center px-2.5 p-2 space-x-1.5 text-sm  rounded">
@@ -80,12 +86,11 @@ const SearchResults = () => {
               </li>
             ))}
           </ul>
-          <li className="border-t border-gray-300 pt-1.5"></li>
         </div>
       </div>
       {!open ? (
         <div
-          className="  w-screen h-screen min-h-5000 min-w-5000 top-12 bg-transparent  absolute "
+          className="  w-screen h-screen min-h-5000 min-w-5000 top-12 bg-transparent  fixed "
           onClick={() => setOpen(true)}
         ></div>
       ) : (

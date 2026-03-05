@@ -139,19 +139,18 @@ export default function CategoryManagementPage() {
 
         {/* Pagination */}
         <div className="flex items-center justify-between px-4 py-3 border-t border-gray-200">
-          <p className="text-sm text-gray-600">
-            {/* Showing {filteredUsers.length} of  orders.length orders */}
-          </p>
+          {/* <p className="text-sm text-gray-600">
+          </p> */}
 
           <div className="flex ">
-            <button
+            {/* <button
               hidden={pageNum <= 1}
               className="px-3  py-1 cursor-pointer border border-gray-300 rounded hover:bg-gray-50"
               onClick={(e) => setPageNum(pageNum - 1)}
             >
               Previous...
-            </button>
-            {Array.from({ length: Math.ceil(count / pageNumData) })?.map(
+            </button> */}
+            {/* {Array.from({ length: Math.ceil(count / pageNumData) })?.map(
               (_, i) => (
                 <div key={i}>
                   {i + 1 <= pageNum + 1 && i + 1 >= pageNum - 1 ? (
@@ -167,8 +166,9 @@ export default function CategoryManagementPage() {
                   ) : null}
                 </div>
               ),
-            )}
-            <button
+            )} */}
+            
+            {/* <button
               hidden={
                 pageNum >= parseInt(Math.ceil(count / pageNumData).toString())
               }
@@ -176,7 +176,7 @@ export default function CategoryManagementPage() {
               onClick={(e) => setPageNum(pageNum + 1)}
             >
               ...Next
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

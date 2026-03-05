@@ -28,7 +28,7 @@ export default function CategoriesSwiper() {
         modules={[FreeMode, Pagination]}
         className="mySwiper"
       >
-        {category && category.length > 0 ? (
+        {category && category?.length > 0 ? (
           category?.map((res: Categories) => (
             <SwiperSlide key={res.id} className="py-5">
               <Link
