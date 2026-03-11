@@ -3,8 +3,9 @@ import ProductsList from "../../components/puplicUsed/ProductsList";
 import { Categories, Products, SearchParamsProducts } from "../../lib/taypes";
 import FilteringProducts from "./FilteringProducts";
 import CategoriesSwiper from "../../components/puplicUsed/CategoriesSwiper";
+import Pagination from "../../components/puplicUsed/Pagination";
 
-interface testAny extends Products {
+interface ProductsPage extends Products {
   category: Categories;
   image: [
     {
@@ -20,7 +21,7 @@ const ProductsPage = async ({
 }) => {
   const params = (await searchParams) as SearchParamsProducts;
 
-  const products: { data: testAny[]; count: number } =
+  const products: { data: ProductsPage[]; count: number ,page: number,countPagn:number} =
     (await getProducts(params).then((res) => res.json())) || [];
   return (
     <>
@@ -35,6 +36,9 @@ const ProductsPage = async ({
               <ProductsList products={products} />
             </div>
           </div>
+            <div>
+              <Pagination count={products.count} page={products.page} countPagn={products.countPagn}/>
+            </div>
         </div>
       </div>
     </>
